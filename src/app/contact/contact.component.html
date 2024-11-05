@@ -1,0 +1,126 @@
+
+
+    <div>
+        <div class="bg-dark mt-5 px-3 pb-4">
+            <label class="text-white mt-2"><b>List of Accounts</b></label>
+            <div class="row">
+                <label class="mt-3 text-white">Accounts</label>
+                <select class="form-select">
+                    <option>Select Options</option>
+                </select>
+            </div>
+
+        </div>
+
+            
+
+
+        <div class="d-flex justify-content-center ">
+
+            <div class="card mt-5" style="width: 25rem; ">
+                <label class="m-2 ">
+                    Change Avatar
+                </label>
+                <div >
+                    <img class ='w-50 rounded' src="../../assets/profile.jpg" >
+                </div>
+                
+                <div class="card-body">
+                
+                  <a href="#" class="btn btn-warning">Change my Profile</a>
+                </div>
+              </div>
+              
+                <div class="bg-dark mt-5 w-50 px-5 ms-5">
+                    <form action="" #r=ngForm (ngSubmit)="submit(r)" >
+    
+                     
+    
+                            <div class="py-3">
+                                <label class="text-white mb-3"><b>Account Settings</b></label>
+                                    <div class="row ">
+                                        <div class="col mt-2">
+                                            <label class="text-white">Account Name</label>
+                                            <input required  type="text"  ngModel  #an = ngModel  name="Aname" class="form-control">
+                                            <p *ngIf="an.touched && an.errors?.['required']" class="text-white">Account name required</p>
+                                             
+                                           
+                                        </div>
+                                        
+                                            <div class="col mt-2">
+                                                <label class="text-white">Account Email</label>
+                                                <input  required email type="email" ngModel #ae= ngModel name="Aemail" class="form-control" >
+                                                <p *ngIf="ae.touched && ae.errors?.['required']" class="text-white">Account email is required</p>
+                                                <p *ngIf="ae.errors?.['email']" class="text-white">Invalid email format</p>
+                                               
+                                                   
+                                
+                                                
+                                            </div>
+                                    </div>
+                                </div>
+    
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label class="text-white">Password</label>
+                                                <input  required ngModel name="Password" type="password" minlength="8" #p=ngModel class="form-control">
+
+                                                <p *ngIf="p.touched && p.errors?.['required']" class="text-white">Password is required</p>
+                                                <p *ngIf="p.errors?.['minlength']" class="text-white">Password must contain minimum of 8 characters</p>
+                                        </div>
+                                           
+                                                   
+                    
+                                            <div class="col ">
+                                                <label class="text-white">Re-Enter Password</label>
+                                                <input required ngModel #Rp=ngModel name="re-enter Password" type="password" cpassword=#p class="form-control"
+                                                [ngClass]="{'is-invalid': Rp.touched && Rp.value !== p.value}">
+                                                <p *ngIf="Rp.touched && Rp.errors?.['required']" class="text-white">Confirm your password</p>  
+                                                <p *ngIf="Rp.touched && Rp.value !== p.value" class="text-white">Passwords do not match</p>
+                                            </div>
+                                    </div>
+                                 </div>
+                                 
+                                        
+    
+                            <div class="row">
+                                <div class="col">
+                                    <label class="text-white">Phone</label>
+                                    <input required ngModel #ph=ngModel name="phone" maxlength="10" type="text" class="form-control" minlength="10">
+                                    <p *ngIf="ph.touched && ph.errors?.['required']" class="text-white">Phone number is required</p>
+                                    <!-- <p *ngIf="ph.errors?.['maxlength']" class="text-white">Phone number should not exceed 10 digits</p> -->
+                                    <p *ngIf="ph.errors?.['minlength']" class="text-white">Phone number must contain 10 digits</p>
+
+                                </div>
+                                <div class="col">
+                                    <button  type="submit" class="form-control mt-4 bg-warning">UPDATE YOUR PROFILE</button>
+                                    
+                                </div>
+                            </div>
+    
+                            <div class="pb-5">
+                               <button  class="form-control mt-4 bg-warning pb">DELETE YOUR ACCOUNT</button>
+                            </div>  
+                            
+                                        
+                                        
+                                       
+                                        
+                                   
+                                   
+                           
+                             
+                    </form>                
+                </div>
+        </div>
+
+            
+                
+             
+        </div>
+
+    
+   
+
+
